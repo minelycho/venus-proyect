@@ -1,0 +1,42 @@
+en:
+  pig_ci:
+    summary:
+      ci_start: 'PigCI Thresholds Summary:'
+      ci_failure: 'PigCI: This commit has exceeded the thresholds defined in PigCI.thresholds'
+      saved_successfully: PigCI report generated to %{output_directory}
+      title: PigCI Results
+      view_historic_reports: 'Historic Reports'
+      footer_html: |
+        <p>Generated <time datetime="%{generated_at}">%{generated_at}</time> by PigCI.</p>
+        <p>Support <a href="https://pigci.mikerogers.io/" target="_blank" rel="noopener">PigCI</a> by <a href="https://www.buymeacoffee.com/MikeRogers0" target="_blank" rel="noopener">buying me a coffee</a>.</p>
+
+    report:
+      memory:
+        name: Peak memory per a request
+        attributes:
+          key: Key
+          max: Max (MB)
+          min: Min (MB)
+          mean: Mean (MB)
+          number_of_requests: Requests
+          max_change_percentage: "% Change"
+
+      request_time:
+        name: Request Time
+        attributes:
+          key: Key
+          max: Max (ms)
+          min: Min (ms)
+          mean: Mean (ms)
+          number_of_requests: Requests
+          max_change_percentage: "% Change"
+
+      database_request:
+        name: Queries to the database
+        attributes:
+          key: Key
+          max: Max
+          min: Min
+          mean: Mean
+          number_of_requests: Requests
+          max_change_percentage: "% Change"
