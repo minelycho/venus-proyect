@@ -41,3 +41,5 @@ yarn-debug.log*
 
 #ignore the enviorenmet variables
 .env
+
+vendor/*
