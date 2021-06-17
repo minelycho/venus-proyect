@@ -48,7 +48,8 @@ RAILS_ENV=test rails db:create
 - /Configure .gitignore to ignore the .env file
 - Write a .env.sample file where you store a sample of the environment file
 - /Install rspec-rails
-- (Setup rubocop for rails)[https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-project-rubocop-setup-with-rspec/]
+- /(Setup rubocop for rails)[https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-project-rubocop-setup-with-rspec/]
+
 - Test that it has the attributes you want it to have
 - Add a user
 - Test that it has the validations you want it to have
