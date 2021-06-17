@@ -43,11 +43,11 @@ RAILS_ENV=test rails db:create
 
 ## Requirements
 
-- Setup environment variables using a .env file
+-/ Setup environment variables using a .env file
 - Include your .env file into docker
-- Configure .gitignore to ignore the .env file
+- /Configure .gitignore to ignore the .env file
 - Write a .env.sample file where you store a sample of the environment file
-- Install rspec-rails
+- /Install rspec-rails
 - (Setup rubocop for rails)[https://hixonrails.com/ruby-on-rails-tutorials/ruby-on-rails-project-rubocop-setup-with-rspec/]
 - Test that it has the attributes you want it to have
 - Add a user
