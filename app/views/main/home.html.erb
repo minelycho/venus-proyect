@@ -1,0 +1,14 @@
+<h1>Main#home</h1>
+<p>Find me in app/views/main/home.html.erb</p>
+
+
+<% if user_signed_in? %>
+<li class="nav-item">
+	<%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
+</li>
+
+<li class="nav-item">
+	<%= link_to "Log off", destroy_user_session_path, method: :delete, class:"nav-link" %>
+</li>
+
+<% end %>
