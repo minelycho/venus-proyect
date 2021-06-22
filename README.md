@@ -69,7 +69,7 @@ LOS (Loan Origination System)
 ## Model Specs
 
 ### User (Use devise or other gem to login)
-  - username
+  -/ username 
   - password
 
 User must validate username uniqueness and password complexity (over 8 chars & inclusion of special characters)
@@ -89,7 +89,13 @@ Loan must validate borrower name presence credit, score presence, and status pre
   - The index controller must render a paginated list of all loans
   - Each loan must display the borrower name, status & credit score
 
-# (Requirements App 2)[https://dev.to/mknycha/serverless-web-scraper-in-ruby-tutorial-50hg]
+
+
+
+
+# (Requirements App 2)[ https://dev.to/mknycha/serverless-web-scraper-in-ruby-tutorial-50hgb ]
+
+https://dev.to/mknycha/serverless-web-scraper-in-ruby-tutorial-50hg
 
 - A plain ruby application
 - Running in an AWS Lambda
