@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true  
   validate :password_complexity
 
+  has_many :loans, dependent: :destroy
   def login
     @login || self.username || self.email
   end

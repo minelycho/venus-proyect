@@ -79,7 +79,7 @@ LOS (Loan Origination System)
   - credit score
   - status (denied approved on_hold)
 
-Loan must validate borrower name presence credit, score presence, and status presence and inclusion in a previously set of values
+//Loan must validate borrower name presence credit, score presence, and status presence and inclusion in a previously set of values
 
 ## Controller Specs
 
