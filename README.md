@@ -70,9 +70,9 @@ LOS (Loan Origination System)
 
 ### User (Use devise or other gem to login)
   -/ username 
-  - password
+  - /password
 
-User must validate username uniqueness and password complexity (over 8 chars & inclusion of special characters)
+/User must validate username uniqueness and password complexity (over /8 chars & inclusion of special characters)
 
 ### Loan
   - borrower name
