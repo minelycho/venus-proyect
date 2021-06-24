@@ -75,9 +75,9 @@ LOS (Loan Origination System)
 /User must validate username uniqueness and password complexity (over /8 chars & inclusion of special characters)
 
 ### Loan
-  - borrower name
-  - credit score
-  - status (denied approved on_hold)
+  - /borrower name
+  - /credit score
+  - / status (denied approved on_hold)
 
 //Loan must validate borrower name presence credit, score presence, and status presence and inclusion in a previously set of values
 

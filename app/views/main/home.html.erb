@@ -11,8 +11,20 @@
 </li>
 <% end %>
 
-<% @loans.each do |loan| %>
-	<div>
-		<%= loan.borrower %>
-	</div>
-<% end %>
+
+<table >
+	 <tr>
+    <th>Borrower</th>
+    <th>credit</th>
+    <th>Status</th>
+  </tr>
+	<% @loans.each do |loans| %>
+	<tr>
+		<td><%= loans.borrower %></td>
+		<td><%= loans.credit %></td>
+		<td><%= loans.status %></td>
+	</tr>
+	 <% end %>
+</table>
+
+<%= paginate @loans %>
