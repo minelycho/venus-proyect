@@ -1,0 +1,30 @@
+<h1>Main#home</h1>
+<%= current_user.username %>
+
+
+<% if user_signed_in? %>
+<li class="nav-item">
+	<%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
+</li>
+<li class="nav-item">
+	<%= link_to "Log off", destroy_user_session_path, method: :delete, class:"nav-link" %>
+</li>
+<% end %>
+
+
+<table >
+	 <tr>
+    <th>Borrower</th>
+    <th>credit</th>
+    <th>Status</th>
+  </tr>
+	<% @loans.each do |loans| %>
+	<tr>
+		<td><%= loans.borrower %></td>
+		<td><%= loans.credit %></td>
+		<td><%= loans.status %></td>
+	</tr>
+	 <% end %>
+</table>
+
+<%= paginate @loans %>

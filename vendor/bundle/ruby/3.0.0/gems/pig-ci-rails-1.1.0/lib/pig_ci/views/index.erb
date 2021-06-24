@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PigCI Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/application.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://pigci.mikerogers.io/images/favicon.png"/>
+    <link rel="icon" type="image/ico" href="https://pigci.mikerogers.io/images/favicon.ico"/>
+  </head>
+  <body>
+
+    <div class="container">
+      <header class="py-3">
+        <div class="row">
+          <div class="col-6">
+            <a href="https://pigci.mikerogers.io/" target="_blank" rel="noopener">
+              <img src="https://pigci.mikerogers.io/images/logo_pigci.svg" class="float-left mr-4" alt="PigCI Logo" />
+            </a>
+            <h1><%= I18n.t('.pig_ci.summary.title') %></h1>
+          </div>
+          <div class="col">
+            <div class="dropdown float-right">
+              <a class="btn btn-primary dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= I18n.t('.pig_ci.summary.view_historic_reports') %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <form class="inline-form">
+                  <% timestamps.each_with_index do |timestamp, index| %>
+                    <label class="dropdown-item form-check form-check-label" data-toggle="collapse" data-target=".timestamp-<%= timestamp %>" aria-expanded="<%= index.zero? ? 'true' : 'false' %>">
+                      <input type="checkbox" class="form-check-input" id="collapseHistoricReport<%= timestamp %>" <%= 'checked="checked"' if index.zero? %>>
+                      <%= Time.at(timestamp.to_s.to_i) %>
+                    </label>
+                  <% end %>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div data-pig-ci-results class="mt-4">
+        <ul class="nav nav-tabs" role="tablist">
+          <% @reports.each_with_index do |report, index| %>
+            <li class="nav-item">
+              <a class="nav-link <%= 'active' if index.zero? %>" data-toggle="tab" href="#<%= report.i18n_key %>" role="tab" aria-controls="<%= report.i18n_key %>-tab" aria-selected="<%= index.zero? ? 'true' : 'false' %>"><%= report.i18n_name %></a>
+            </li>
+          <% end %>
+        </ul>
+
+        <article>
+          <div class="tab-content mt-4">
+            <% @reports.each_with_index do |report, index| %>
+              <section class="tab-pane fade <%= 'show active' if index.zero? %>" id="<%= report.i18n_key %>" role="tabpanel" aria-labelledby="<%= report.i18n_key %>-tab">
+                <%= render_report(report) %>
+              </section>
+            <% end %>
+          </div>
+        </article>
+      </div>
+
+      <footer class="mt-3 py-3 text-muted text-small">
+        <%= I18n.t('.pig_ci.summary.footer_html', generated_at: Time.now.utc) %>
+      </footer>
+    </div>
+  </body>
+</html>
