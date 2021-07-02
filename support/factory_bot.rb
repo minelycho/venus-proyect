@@ -1,3 +1,3 @@
 Rspec.configure do |config|
-	config.include FactoryBot::Syntax::AttributeMethods
+  config.include FactoryBot::Syntax::AttributeMethods
 end
