@@ -41,8 +41,7 @@ RAILS_ENV=test rails db:create
 -> create db for test
 ```
 
-<<<<<<< HEAD
-## Requirements
+## General Requirements
 
 -/ Setup environment variables using a .env file
 - Include your .env file into docker
@@ -57,7 +56,7 @@ RAILS_ENV=test rails db:create
 - Add validations to it
 - with the capacity to login
 - Run rubocop and correct it
-=======
+
 # Requirements App 1
 
 LOS (Loan Origination System)
@@ -89,10 +88,6 @@ LOS (Loan Origination System)
   - The index controller must render a paginated list of all loans
   - Each loan must display the borrower name, status & credit score
 
-
-
-
-
 # (Requirements App 2)[ https://dev.to/mknycha/serverless-web-scraper-in-ruby-tutorial-50hgb ]
 
 https://dev.to/mknycha/serverless-web-scraper-in-ruby-tutorial-50hg
@@ -110,4 +105,18 @@ https://dev.to/mknycha/serverless-web-scraper-in-ruby-tutorial-50hg
   - status
   - credit score
   - loan
->>>>>>> 21fe3bf9bfea3445ac24f7829963accb0ce87bed
+
+```ruby
+describe LoansController, '#index' do
+  context 'as a logged in user' do
+    context 'that has loans' do
+      it 'displays the users loans'
+    end
+
+    context 'when someone else has loans' do
+      it 'shows empty list'
+    end
+  end
+end
+```
+
